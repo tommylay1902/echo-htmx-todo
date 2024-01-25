@@ -7,17 +7,19 @@ import (
 
 templ Todo(todo *types.Todo) {
 	if todo != nil {
-		<li id={ fmt.Sprintf("todo-%v", todo.Id) } class="fade-me-out fade-in-image min-w-full my-2">
-			<span class="mx-6 min-w-80 inline-block">{ todo.Description }</span>
+		<li id={ fmt.Sprintf("todo-%v", todo.Id) } class="fade-me-out fade-in-image min-w-full my-2 text-white">
 			<button
-				class="inline-block btn bg-teal-300 p-3 rounded-lg"
+				class="inline-block btn bg-[010b19] p-3 rounded-lg"
 				hx-delete={ fmt.Sprintf("/delete/%v", todo.Id) }
 				hx-trigger="click"
 				hx-target={ fmt.Sprintf("#todo-%v", todo.Id) }
-				hx-swap="outerHTML swap:1s"
+				hx-swap="outerHTML swap:1.1s"
 			>
-				Complete
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+				</svg>
 			</button>
+			<span class="mx-6 min-w-80 inline-block">{ todo.Description }</span>
 		</li>
 	}
 }

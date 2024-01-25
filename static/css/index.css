@@ -3,18 +3,116 @@
       opacity: 0;
 }
 
+
 .fade-me-out.htmx-swapping {
     opacity: 0;
     transition: opacity 1s ease-out;
+    animation: floatDown 1s ease-out forwards;
+    -webkit-animation: floatDown 1s ease-out forwards;
+    -moz-animation: floatDown 1s ease-out forwards;
+    -o-animation: floatDown 1s ease-out forwards;
+    -ms-animation: floatDown 1s ease-out forwards;
+}
+
+@keyframes floatDown {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes floatDown {
+    0% {
+        -webkit-transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes floatDown {
+    0% {
+        -moz-transform: translateY(-10px);
+    }
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+
+@-o-keyframes floatDown {
+    0% {
+        -o-transform: translateY(-10px);
+    }
+    100% {
+        -o-transform: translateY(0);
+    }
+}
+
+@-ms-keyframes floatDown {
+    0% {
+        -ms-transform: translateY(-10px);
+    }
+    100% {
+        -ms-transform: translateY(0);
+    }
 }
 
 .fade-in-image {
-    animation: fadeIn 3s;
-    -webkit-animation: fadeIn 3s;
-    -moz-animation: fadeIn 3s;
-    -o-animation: fadeIn 3s;
-    -ms-animation: fadeIn 3s;
+    animation: fadeIn 1s, floatUp 1s ease-out forwards;
+    -webkit-animation: fadeIn 1s, floatUp 1s ease-out forwards;
+    -moz-animation: fadeIn 1s, floatUp 1s ease-out forwards;
+    -o-animation: fadeIn 1s, floatUp 1s ease-out forwards;
+    -ms-animation: fadeIn 1s, floatUp 1s ease-out forwards;
 }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@-webkit-keyframes floatUp {
+    0% {
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-15px);
+    }
+}
+
+@-moz-keyframes floatUp {
+    0% {
+        -moz-transform: translateY(0);
+    }
+    100% {
+        -moz-transform: translateY(-15px);
+    }
+}
+
+@-o-keyframes floatUp {
+    0% {
+        -o-transform: translateY(0);
+    }
+    100% {
+        -o-transform: translateY(-15px);
+    }
+}
+
+@-ms-keyframes floatUp {
+    0% {
+        -ms-transform: translateY(0);
+    }
+    100% {
+        -ms-transform: translateY(-15px);
+    }
+}
+
+
 
 
 .disabled-button {
