@@ -1,0 +1,11 @@
+package views
+
+import (
+	"github.com/tommylay1902/todo/types"
+)
+
+templ TodoList(todos []types.Todo) {
+	for _, todo := range todos {
+		@Todo(&todo)
+	}
+}

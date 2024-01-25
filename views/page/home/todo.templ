@@ -1,0 +1,23 @@
+package views
+
+import (
+	"github.com/tommylay1902/todo/types"
+	"fmt"
+)
+
+templ Todo(todo *types.Todo) {
+	if todo != nil {
+		<li id={ fmt.Sprintf("todo-%v", todo.Id) } class="fade-me-out fade-in-image min-w-full my-2">
+			<span class="mx-6 min-w-80 inline-block">{ todo.Description }</span>
+			<button
+				class="inline-block btn bg-teal-300 p-3 rounded-lg"
+				hx-delete={ fmt.Sprintf("/delete/%v", todo.Id) }
+				hx-trigger="click"
+				hx-target={ fmt.Sprintf("#todo-%v", todo.Id) }
+				hx-swap="outerHTML swap:1s"
+			>
+				Complete
+			</button>
+		</li>
+	}
+}

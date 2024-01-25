@@ -1,0 +1,35 @@
+package views
+
+import "github.com/tommylay1902/todo/types"
+
+templ Index(todos []types.Todo) {
+	<style>
+
+		
+	</style>
+	<html>
+		<head>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+			<link rel="stylesheet" href="static/css/index.css"/>
+			<script src="static/js/scripts.js" defer></script>
+		</head>
+		<body>
+			<div class="flex flex-col items-center">
+				<div class="mx-7 p-5">
+					<form>
+						<span>
+							@Input()
+						</span>
+						<button type="submit" hx-post="/create" class="bg-cyan-400 rounded-lg p-1" hx-target="#todo-list" hx-swap="beforeend">Create</button>
+					</form>
+				</div>
+				<div class="text-3xl">
+					<ul id="todo-list">
+						@TodoList(todos)
+					</ul>
+				</div>
+			</div>
+		</body>
+	</html>
+}
